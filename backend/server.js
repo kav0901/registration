@@ -25,7 +25,9 @@ app.use('/api/auth', require('./routes/auth'));
 
 
 // Start the server
+// Use the environment port provided by Render, or default to 5000 for local testing
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
-    console.log(`🚀 Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });

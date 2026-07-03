@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
     res.send('Volunteer Registration System Backend is running with MongoDB!');
 });
 
+// Import Auth Routes
+app.use('/api/auth', require('./routes/auth'));
+
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

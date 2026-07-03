@@ -89,4 +89,17 @@ router.get('/profile', authMiddleware, async (req, res) => {
     }
 });
 
+// GET ALL USERS (For Admin Dashboard)
+router.get('/users', authMiddleware, async (req, res) => {
+    try {
+        // .find() with no arguments fetches EVERY document in the collection
+        // .select('-password') ensures we don't accidentally send passwords to the frontend
+        const users = await User.find().select('-password');
+        res.json(users);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server Error fetching users" });
+    }
+});
+
 module.exports = router;

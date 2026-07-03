@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
@@ -21,6 +23,7 @@ function Login() {
                 setMessage('✅ Login successful!');
                 // Save the JWT VIP pass in the browser
                 localStorage.setItem('token', data.token);
+                navigate('/dashboard');
                 // Clear the form
                 setEmail(''); setPassword('');
             } else {

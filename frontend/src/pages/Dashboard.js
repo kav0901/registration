@@ -18,7 +18,7 @@ function Dashboard() {
             }
 
             try {
-                const response = await fetch('/api/auth/profile', {
+                const response = await fetch('https://registration-backend-24jg.onrender.com/api/auth/profile', {
                     method: 'GET',
                     headers: {
                         'x-auth-token': token // Showing our VIP pass to the Bouncer!

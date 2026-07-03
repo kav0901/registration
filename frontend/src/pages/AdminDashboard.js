@@ -15,7 +15,7 @@ function AdminDashboard() {
             }
 
             try {
-                const response = await fetch('/api/auth/users', {
+                const response = await fetch('https://registration-backend-24jg.onrender.com/api/auth/users', {
                     method: 'GET',
                     headers: { 'x-auth-token': token } 
                 });
